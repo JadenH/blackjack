@@ -27,3 +27,58 @@ npm run dev
 	- [Nodemon](http://nodemon.io/)
 	- [Lodash](https://lodash.com/)
 - [MongoDB Database](https://www.mongodb.com/)
+
+
+### Example GraphiQL
+*******************************
+```gql
+mutation CreateUser {
+  userCreate(record: {username: "Jaden"}) {
+    recordId
+  }
+}
+
+mutation CreateNewGame {
+  gameCreate(userId: "ENTER_USER_ID") {
+    ...FullGame
+  }
+}
+
+query Game {
+  gameById(_id: "ENTER_GAME_ID") {
+    ...FullGame
+  }
+}
+
+fragment FullGame on Game {
+  _id
+  status
+  updatedAt
+  createdAt
+  hands {
+    score
+    player {
+      username
+    }
+    cards {
+      suit
+      rank
+    }
+  }
+  dealer {
+    score(visibleOnly: false)
+    cardsUp {
+      suit
+      rank
+    }
+    cardsDown {
+      suit
+      rank
+    }
+    deck {
+      suit
+      rank
+    }
+  }
+}
+```
