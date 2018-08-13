@@ -28,6 +28,9 @@ npm run dev
 	- [Lodash](https://lodash.com/)
 - [MongoDB Database](https://www.mongodb.com/)
 
+### NoSQL Database ER Diagram
+![Image of ERD](/blackjack_schema.png)
+
 
 ### Example GraphiQL
 *******************************
